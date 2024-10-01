@@ -2,8 +2,7 @@
 
 import xml.etree.ElementTree as ET
 import argparse
-import logging as log
-
+import gzip
 
 
 def parse_dmarc_report(file_path):
@@ -11,8 +10,16 @@ def parse_dmarc_report(file_path):
     print(f"\nParsing DMARC report: {file_path}")
 
     try:
-        # Load and parse the XML file
-        tree = ET.parse(file_path)
+        # Check if the file is compressed (.gz) or a regular XML file
+        if file_path.endswith('.gz'):
+            # Open and decompress the .gz file
+            with gzip.open(file_path, 'rt', encoding='utf-8') as file:
+                tree = ET.parse(file)
+        else:
+            # Open the regular XML file
+            tree = ET.parse(file_path)
+
+        # Parse the XML tree
         root = tree.getroot()
 
         # Extract information from the <report_metadata> section
@@ -30,11 +37,14 @@ def parse_dmarc_report(file_path):
         if policy_published is not None:
             domain = policy_published.find('domain').text
             policy = policy_published.find('p').text
-            subdomain_policy = policy_published.find('sp').text if policy_published.find('sp') is not None else 'None'
+            subdomain_policy = policy_published.find('sp').text if policy_published.find(
+                'sp') is not None else 'None'
+
             if "reject" in policy.lower() or args.verbose:
                 print(f"Domain: {domain}")
                 print(f"Policy: {policy}")
                 print(f"Subdomain Policy: {subdomain_policy}")
+
 
         # Extract individual records
         records = root.findall('record')
@@ -52,19 +62,20 @@ def parse_dmarc_report(file_path):
                 print(f"Disposition: {disposition}")
                 print(f"DKIM: {dkim}")
                 print(f"SPF: {spf}")
+
     except Exception as e:
         print(f"Error parsing {file_path}: {e}")
 
 
 if __name__ == "__main__":
     # Setup argument parser
-    parser = argparse.ArgumentParser(description="Parse DMARC XML reports.")
+    parser = argparse.ArgumentParser(description="Parse DMARC XML or .gz compressed XML reports.)
     parser.add_argument('--verbose', '-v', action='store_true', default=0, help="Show passes in addition to fails.")
-    parser.add_argument('files', nargs='+', help="The paths to one or more DMARC XML files.")
-
+    parser.add_argument('files', nargs='+', help="The paths to one or more DMARC XML or .gz compressed XML files.)
 
     # Parse the arguments
     args = parser.parse_args()
+
 
     # Call the function to parse each DMARC report file
     for file_path in args.files:
