@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9887373-375a-498b-a06c-41e367c16bbf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/DMARC_Parser.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/amazonses.com!occjajail.org!1727308800!1727395200.1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/amazonses.com!occjajail.org!1727308800!1727395200.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aol.com!occjajail.org!1727308800!1727395199.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parseDMARC.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protection.outlook.com!occjajail.org!1727222400!1727308800.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testdata.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yahoo.com!occjajail.org!1727308800!1727395199.xml" afterDir="false" />
+    <list default="true" id="c9887373-375a-498b-a06c-41e367c16bbf" name="Changes" comment="Initial commit.  Parses one file at a time.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +33,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.parseDMARC .executor": "Run",
     "Python.parseDMARC testdata.xml.executor": "Run",
     "Python.parseDMARC.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -103,6 +92,19 @@
       <option name="presentableId" value="Default" />
       <updated>1727794026474</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit.  Parses one file at a time.">
+      <option name="closed" value="true" />
+      <created>1727796255752</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727796255752</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit.  Parses one file at a time." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit.  Parses one file at a time." />
   </component>
 </project>
