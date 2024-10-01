@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feedback>
+  <report_metadata>
+    <org_name>example.com</org_name>
+    <email>postmaster@example.com</email>
+    <extra_contact_info>http://example.com</extra_contact_info>
+    <report_id>123456789</report_id>
+    <date_range>
+      <begin>1695811200</begin> <!-- UNIX timestamp (start) -->
+      <end>1695897600</end> <!-- UNIX timestamp (end) -->
+    </date_range>
+  </report_metadata>
+
+  <policy_published>
+    <domain>example.com</domain>
+    <adkim>r</adkim> <!-- relaxed alignment for DKIM -->
+    <aspf>r</aspf> <!-- relaxed alignment for SPF -->
+    <p>reject</p> <!-- reject all failed emails -->
+    <sp>reject</sp>
+    <pct>100</pct> <!-- policy applies to 100% of emails -->
+  </policy_published>
+
+  <!-- First rejection record -->
+  <record>
+    <row>
+      <source_ip>192.168.1.100</source_ip> <!-- IP Address of the server sending the email -->
+      <count>5</count> <!-- Number of failed attempts -->
+      <policy_evaluated>
+        <disposition>reject</disposition> <!-- Action taken due to DMARC policy -->
+        <dkim>fail</dkim> <!-- DKIM check result -->
+        <spf>fail</spf> <!-- SPF check result -->
+      </policy_evaluated>
+    </row>
+
+    <identifiers>
+      <header_from>example.com</header_from> <!-- Domain in the "From" header -->
+    </identifiers>
+
+    <auth_results>
+      <dkim>
+        <domain>example-spoof.com</domain> <!-- Spoofed domain using DKIM -->
+        <result>fail</result>
+      </dkim>
+      <spf>
+        <domain>example-spoof.com</domain> <!-- Spoofed domain using SPF -->
+        <result>fail</result>
+      </spf>
+    </auth_results>
+  </record>
+
+  <!-- Second rejection record -->
+  <record>
+    <row>
+      <source_ip>203.0.113.50</source_ip> <!-- IP Address of another spoof attempt -->
+      <count>8</count> <!-- Number of failed attempts -->
+      <policy_evaluated>
+        <disposition>reject</disposition>
+        <dkim>fail</dkim>
+        <spf>fail</spf>
+      </policy_evaluated>
+    </row>
+
+    <identifiers>
+      <header_from>example.com</header_from>
+    </identifiers>
+
+    <auth_results>
+      <dkim>
+        <domain>malicious-domain.com</domain> <!-- Another spoofed domain -->
+        <result>fail</result>
+      </dkim>
+      <spf>
+        <domain>malicious-domain.com</domain>
+        <result>fail</result>
+      </spf>
+    </auth_results>
+  </record>
+
+  <!-- Third rejection record -->
+  <record>
+    <row>
+      <source_ip>198.51.100.200</source_ip> <!-- Another IP trying to spoof -->
+      <count>12</count> <!-- More failed attempts -->
+      <policy_evaluated>
+        <disposition>reject</disposition>
+        <dkim>fail</dkim>
+        <spf>fail</spf>
+      </policy_evaluated>
+    </row>
+
+    <identifiers>
+      <header_from>example.com</header_from>
+    </identifiers>
+
+    <auth_results>
+      <dkim>
+        <domain>bad-actor.com</domain> <!-- Spoofed domain for this attempt -->
+        <result>fail</result>
+      </dkim>
+      <spf>
+        <domain>bad-actor.com</domain>
+        <result>fail</result>
+      </spf>
+    </auth_results>
+  </record>
+
+  <!-- Fourth rejection record -->
+  <record>
+    <row>
+      <source_ip>198.51.100.123</source_ip> <!-- Yet another spoofing IP -->
+      <count>3</count> <!-- Fewer failed attempts -->
+      <policy_evaluated>
+        <disposition>reject</disposition>
+        <dkim>fail</dkim>
+        <spf>fail</spf>
+      </policy_evaluated>
+    </row>
+
+    <identifiers>
+      <header_from>example.com</header_from>
+    </identifiers>
+
+    <auth_results>
+      <dkim>
+        <domain>spoofed-domain.com</domain> <!-- Spoofed domain used here -->
+        <result>fail</result>
+      </dkim>
+      <spf>
+        <domain>spoofed-domain.com</domain>
+        <result>fail</result>
+      </spf>
+    </auth_results>
+  </record>
+
+</feedback>
+
