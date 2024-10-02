@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9887373-375a-498b-a06c-41e367c16bbf" name="Changes" comment="Initial commit.  Parses one file at a time.">
+    <list default="true" id="c9887373-375a-498b-a06c-41e367c16bbf" name="Changes" comment="Added support for .zip files&#10;&#10;Added parsing of timestamp data.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,9 +22,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Ashrin0&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ashrin0/DMARC_Parser.git&quot;,
+    &quot;accountId&quot;: &quot;ce49ff87-d576-4300-9397-0435c20aaa3c&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2mqB3RvmagUBLNo43XL30zrNhJo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -39,7 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "/home/kali/Projects/DMARC_Parser",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -62,7 +74,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parseDMARC.py" />
-      <option name="PARAMETERS" value="testdata.xml" />
+      <option name="PARAMETERS" value="*.xml" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -100,11 +112,46 @@
       <option name="project" value="LOCAL" />
       <updated>1727796255752</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial commit.  Parses one file at a time.">
+      <option name="closed" value="true" />
+      <created>1727796641228</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727796641228</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Seperate py created to handle gz files">
+      <option name="closed" value="true" />
+      <created>1727816230071</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727816230071</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Combined both functions into the primary python file.  &#10;Added -v, --verbose: Default behavior is now to only show rejects, -v is needed to show passes as well.">
+      <option name="closed" value="true" />
+      <created>1727816390175</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727816390175</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added support for .zip files&#10;&#10;Added parsing of timestamp data.">
+      <option name="closed" value="true" />
+      <created>1727819542840</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727819542840</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit.  Parses one file at a time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit.  Parses one file at a time." />
+    <MESSAGE value="Seperate py created to handle gz files" />
+    <MESSAGE value="Combined both functions into the primary python file.  &#10;Added -v, --verbose: Default behavior is now to only show rejects, -v is needed to show passes as well." />
+    <MESSAGE value="Added support for .zip files&#10;&#10;Added parsing of timestamp data." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added support for .zip files&#10;&#10;Added parsing of timestamp data." />
   </component>
 </project>
